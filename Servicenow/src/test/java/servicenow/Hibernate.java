@@ -40,8 +40,9 @@ public class Hibernate {
         if(pageSource.contains("Instance Hibernating page")) {
             test.pass("Instance is hibernating. Starting wake process.");
             driver.findElement(By.xpath("//button[contains(text(),'Sign in')]")).click();
-            sh.setImplicitWait(15);
-            sh.findElementByXPath("//span[text()='Sign in']").click();
+            sh.setImplicitWait(30);
+            Thread.sleep(5000);
+            sh.findElementByXPath("//span[text()='Sign In']").click();
             driver.findElement(By.xpath("//input[@name='username']")).sendKeys("harrishanimation@gmail.com");
             driver.findElement(By.xpath("//button[@type='submit']")).click();
             Thread.sleep(2000);
